@@ -37,7 +37,7 @@ function App() {
     const createComment = async (e, post_id) => {
         e.preventDefault();
 
-        const response = await fetch('http://localhost:8001/api/comments', {
+        const response = await fetch('http://localhost:8001/api/comments/', {
             method: "POST",
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({
@@ -51,10 +51,8 @@ function App() {
         comment = ''
 
         setPosts(posts.map(p => {
-            if (p.id === post_id) {
-                p.comments.push(createdComment)
-            }
-
+            // if (p.id === post_id) {
+            // }
             return p;
         }))
     }
