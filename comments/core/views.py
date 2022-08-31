@@ -4,6 +4,14 @@ from .serializers import CommentSerializer
 from .models import Comment
 from rest_framework.response import Response
 
+class PostCommentAPIView(APIView):
+    def get(self, _, pk=None):
+        comments = Comment.objects.filter(post_id=pk)
+        serializer = CommentSerializer(comments, many=True)
+
+        return Response(serializer.data)
+        
+
 class ComentsApiView(APIView):
     def get(self, request):
         comments = Comment.objects.all()
