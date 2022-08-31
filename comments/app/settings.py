@@ -69,7 +69,7 @@ WSGI_APPLICATION = 'app.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'coments_ms',
+        'NAME': 'comments_ms',
         'USER': 'root',
         'PASSWORD': 'AErkinov_101',
         'HOST': 'localhost'
