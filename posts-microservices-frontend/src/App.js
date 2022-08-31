@@ -51,8 +51,9 @@ function App() {
         comment = ''
 
         setPosts(posts.map(p => {
-            // if (p.id === post_id) {
-            // }
+            if (p.id === post_id) {
+               console.log(p.comments.push(createdComment));
+            }
             return p;
         }))
     }
