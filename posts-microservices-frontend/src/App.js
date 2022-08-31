@@ -17,16 +17,18 @@ function App() {
 
     const createPost = async e => {
         e.preventDefault();
-
-        const res = await fetch('http://localhost:8000/api/posts', {
+        
+        const res = await fetch('http://localhost:8000/api/posts/', {
             method: "POST",
-            headers: {'Content-Type': 'application/json'},
+            headers: {
+                'Content-Type': 'application/json', 
+            },
             body: JSON.stringify({
                 title,
                 description,
             })
         });
-
+        console.log(res);
         const createdPost = await res.json();
 
         setPosts([...posts, createdPost]);
